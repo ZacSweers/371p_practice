@@ -8,7 +8,7 @@ This revolves around 3 main concepts:
 <ul>
 <li>1. Annotated notes</li>
 <p>These are Downing's examples from class, annotated with a lot more comments for clarity, and sometimes even extra code.</p>
-<li>2. Annotated notes</li>
+<li>2. Annotated quizzes</li>
 <p>The quizzes, with some explanation</p>
 <li>3. Questions</li>
 <p>These are going to be the main focus. We consolidate some example questions over the content, and then have a separate document for their solutions. This is to get extra practice for the kinds of questions we see on tests.</p>
