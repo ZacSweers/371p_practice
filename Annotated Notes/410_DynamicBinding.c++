@@ -191,7 +191,15 @@ int main () {
     assert(a[1].area() == 3.14 * 7 * 7);
     const Shape* const p = a;
     assert(p[0].area() == 3.14 * 4 * 4);
-//  assert(p[1].area() == 0);                              // illdefined because pointer p doesn't advance correctly to the second item in the array. Full explanation from Piazza post @408 (https://piazza.com/class#spring2013/cs371p/408): p[0].area() calls the correct area method because of dynamic binding. But because p is a pointer to a Shape, when you look at the next element of p (p[1]), you're not moving the correct amount of space in memory to look at a[1] (because a is an array of Circles, not Shapes). So p[1] points at some weird thing that's not actually pointing at a[1]. So the area method is illdefined for that weird place in memory.
+//  assert(p[1].area() == 0);               // illdefined because pointer p doesn't advance correctly 
+                                            //to the second item in the array. Full explanation from 
+                                            //Piazza post @408 (https://piazza.com/class#spring2013/cs371p/408): 
+                                            //p[0].area() calls the correct area method because of dynamic binding. 
+                                            //But because p is a pointer to a Shape, when you look at the next 
+                                            //element of p (p[1]), you're not moving the correct amount of space 
+                                            //in memory to look at a[1] (because a is an array of Circles, not Shapes).
+                                            //So p[1] points at some weird thing that's not actually pointing at 
+                                            //a[1]. So the area method is illdefined for that weird place in memory.
 
     }
 
