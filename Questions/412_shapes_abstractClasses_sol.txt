@@ -1,0 +1,46 @@
+1. 
+	C++ - make the function "pure virtual"
+		AKA
+			void foo() {...}			/* Not abstract */
+			virtual void foo() {...}	/* Not abstract */
+			virtual void foo() = 0;		/* Now it's abstract */
+
+	Java - prefix it with the "abstract keyword"
+			void foo() {...}			/* Not abstract */
+			abstract foo();				/* Now it's abstract */
+
+2. It must define ALL the abstract methods inherited from A.
+
+3.
+	C++ - yes, optionally can be defined OUTSIDE of the class
+
+		bool AbstractShape::equals (const AbstractShape& that) const {
+    		return (_x == that._x) && (_y == that._y);}
+
+    Java - no.
+
+4. 
+	No, it's optional.
+
+5.
+	Java - super.<methodName>(...)			/* Because java only allows linear inheritance. One possible parent */
+	C++ - <parentName>.<methodName(...)		/* C++ allows multiple inheritance, so you have to specify */
+
+6.
+	C++ allows for multiple inheritance
+
+7.
+	C++ - no, it's implicit
+	Java - yes, you must prefix the class definition with 'abstract' now
+
+8.
+	C++ - AbstractShape& type	/* Note that it's by reference */
+	Java - an Object type
+
+9.
+	C++ constructor uses an initializer block for attribute variables
+
+10.
+	C++ - No, calls Shape's
+	Java - Yes, calls Circle's
+

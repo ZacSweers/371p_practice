@@ -1,0 +1,37 @@
+/**
+ * 1. How do you declare a function as "abstract" in c++? In Java?
+ *
+ * 2. If a class B is derived from abstract class A, what must it do to not also be Abstract?
+ *
+ * 3. Can you define abstract methods in C++? In Java? If so, how?
+ *
+ * 4. Do you have to prefix an inherited virtual method with "virtual" again in the derived class in C++?
+ * 		example:
+ * 			class A {virtual void f();}
+ * 			class B : public A {virtual? void f();}
+ *
+ * 5. How do you call the parent method in Java? In C++?
+ *
+ * 6. What does C++ allow for with inheritance that Java does not?
+ *
+ * 7. Do you have to make a class as abstract if it has an abstract method in C++? In Java?
+ *
+ * 8. What does equals() take in as a parameter in C++? In Java?
+ *
+ * 9. In the shape classes, does the C++ int constructor do differently than the Java int constructor?
+ *
+ * 10. Say you have an AbstractShape array filled with Circles.
+ * 		In C++ and in Java (respectively), does a[1].area() call Shape's area or Circle's?
+ *
+ * Last couple notes:
+ * 		Basically, with inheritance and dynamic binding, you have to look at it like this:
+ * 			The parent's API will, if it's virtual or overridden (C++ and java respectively),
+ * 			try to use the derived class's method instead.
+ *
+ * 			If the parent's API doesn't support it (think radius()), then you will have to cast it
+ * 			to  whatever derived type it is that does support it (casting, dynamic_cast)
+ *
+ * 			If at least one method is abstract in a class, the whole class is abstract
+ *
+ * 
+ */
