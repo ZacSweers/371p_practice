@@ -19,6 +19,7 @@ struct A {
         return "A::h";}};
 
 struct B : A {
+    /* NOTE that we don't have to specify which ones we want to use since they're virtual */
     virtual std::string f (int) {
         return "B::f";}
 
@@ -34,9 +35,9 @@ int main () {
 
     A* const p = new B();
 
-    assert(p->f(2) == "B::f");
-    assert(p->g(2) == "A::g");
-    assert(p->h(2) == "A::h");
+    assert(p->f(2) == "B::f");  /* Get B's because it also takes an int */
+    assert(p->g(2) == "A::g");  /* Get A's because its signature is better suited for an int */
+    assert(p->h(2) == "A::h");  /* Get A's because its signature is better suited for an int */
 
     delete p;
 

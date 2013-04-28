@@ -1,0 +1,11 @@
+1. Forces the use of the derived class's method even if the parent one could be better suited
+
+2. C++
+	"using <className>::<methodName>;"
+
+3. Uses B's (because it doesn't specify to use A's)
+
+4. Uses A's (because it specifies to use A's)
+
+5. Uses's A's (because it explicitly calls A's)
+

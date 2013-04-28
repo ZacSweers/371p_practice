@@ -1,0 +1,28 @@
+1. What does the @Override keyword do in Java?
+
+2. Which language requires you to specify which parent methods you want to use in overridding? How do you specify it?
+
+3. Say you have class A and class B (which extends from A). Does the following snippet call A or B's f()? Why?
+	A::f(int)
+	B::f(double)
+
+		B x;
+		x.f(3);
+
+4. Say you have class A and class B (which extends from A). Does the following snippet call A or B's f()? Why?
+	A::f(int)
+	(in B)
+		using A::f;
+
+	B::f(double)
+
+		B x;
+		x.f(3);
+
+5. Say you have class A and class B (which extends from A). Does the following snippet call A or B's f()? Why?
+	A::f(int)
+	B::f(double)
+
+		B x;
+		x.A::f(3);
+

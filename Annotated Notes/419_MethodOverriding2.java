@@ -13,6 +13,7 @@ class B extends A {
     public String f (int i) {
         return "B.f";}
 
+    /* We'd use @Override if it had the same signature as one from A and we wanted to only use B's */
 //  @Override                    // MethodOverriding2.java:16: method does not override or implement a method from a supertype
     public String g (double d) {
         return "B.g";}}
@@ -23,7 +24,7 @@ final class MethodOverriding2 {
 
         A x = new B();
 
-        assert x.f(2) == "B.f";
-        assert x.g(2) == "A.g";
+        assert x.f(2) == "B.f"; /* Use B's because it takes an int as well */
+        assert x.g(2) == "A.g"; /* Use A's because its signature is better suited for an int */
 
         System.out.println("Done.");}}
