@@ -25,9 +25,12 @@ class Handle {
         typedef const value_type& const_reference;
 
     private:
+        /* Pointer to object we're currently using */
         pointer _p;
 
     protected:
+
+        /* Getters */
         pointer get () {
             return _p;}
 
@@ -35,22 +38,29 @@ class Handle {
             return _p;}
 
     public:
+        /* Pointer constructor */
         Handle (pointer p) {
             _p = p;}
 
+        /* Copy constructor */
         Handle (const Handle& that) {
+            /* Sanity check, make sure it's not the same object */
             if (!that._p)
                 _p = 0;
+            /* Set our _p to a clone of that's _p */
             else
                 _p = that._p->clone();}
 
         ~Handle () {
             delete _p;}
 
+        /* Operator=. Take in a tmp copy, swap contents, return this by reference */
         Handle& operator = (Handle that) {
             swap(that);
             return *this;}
 
+        /* Swap function, takes in by reference and swaps _p values */
+        /* By reference because we're using the "that" temp from operator= above */
         void swap (Handle& that) {
             std::swap(_p, that._p);}};
 
