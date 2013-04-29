@@ -1,0 +1,35 @@
+1.
+	*this of the object, by reference
+
+2.
+	a copy of _p
+
+3.
+	the get() function
+
+4.
+	Used to track the number of instances of an Object there are. Useful in helping track memory leaks and sanity checks
+
+5.
+	pointer get () {
+        if (!unique()) {
+            --_p->_c;
+            _p = new count(_p->_q->clone());}
+        return _p->_q;}
+
+6.
+	 Handle (const Handle& that) {
+        if (!that._p)
+            _p = 0;
+        else {
+            _p = that._p;
+            ++_p->_c;}}
+
+7. 
+	The object pointer is now kept in the "count" struct, which in turn keeps a reference count as well. The 
+	handle object itself contains just a pointer to a "count" struct
+
+8.
+	It doesn't change the API of Handle1 that we used before, but makes it more useful. Illustrates good OOP design
+	where a package/class can be changed without requiring the programmer to change how the dependent classes/packages 
+	are implemented. AKA the API stays the same.

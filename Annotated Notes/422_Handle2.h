@@ -44,12 +44,19 @@ class Handle {
             swap(that);
             return *this;}
 
+        /**
+         * Now instead of get(), we can just use the following functions
+         * This makes our code just a little bit more efficient, and easier on the eyes
+         */
+
+        /* Dereferencer */
         reference operator * () {
             return *_p;}
 
         const_reference operator * () const {
             return *_p;}
 
+        /* Returns just the pointer */
         pointer operator -> () {
             return _p;}
 

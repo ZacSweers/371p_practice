@@ -6,8 +6,8 @@
 #include <iostream> // cout, endl
 #include <typeinfo> // bad_cast
 
-#include "Handle2.h"
-#include "Shapes.h"
+#include "422_Handle2.h"
+#include "412_Shapes.h"
 
 typedef Handle<AbstractShape> Shape;
 
@@ -31,13 +31,20 @@ int main () {
     }
 
     {
+    /**
+     * Notice how now instead of using get(), we use operator-> and operator*
+     */
+
     const Shape x = new Circle(2, 3, 4);
 //  x->move(5, 6);                                                           // doesn't compile
     assert(x->area() == (3.14 * 4 * 4));
 //  assert(x->radius() == 4);                                                // doesn't compile
+ 
+    /* operator-> returns a pointer */
     if (const Circle* const q = dynamic_cast<const Circle*>(x.operator->()))
         assert(q->radius() == 4);
     try {
+        /* operator* returns an object by reference */
         const Circle& r = dynamic_cast<const Circle&>(x.operator*());
         assert(r.radius() == 4);}
     catch (const bad_cast& e) {
@@ -61,6 +68,8 @@ int main () {
     {
     const Shape x = new Circle(2, 3, 4);
           Shape y = x;
+
+    /* Now we can treat y like a pointer even though it's not. -> return a pointer, does dynamic binding for us */
     y->move(5, 6);
     assert(y->area() == (3.14 * 4 * 4));
     }
