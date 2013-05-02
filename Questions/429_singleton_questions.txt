@@ -1,0 +1,20 @@
+1.
+	What's are some good uses of singletons? (Name at least 2)
+
+2.
+	What are two ways to define a singleton?
+
+3.
+	Can you have multiple instances of a singleton class?
+
+4.
+	say we have a class Singleton with an attribute _only, how would we access this elsewhere?
+
+5.
+	What are some benefits of using singletons instead of static classes?
+
+6.
+	In C++, can a static member object be initialized inside of a class? In java?
+
+7.
+	What's different about constructors in singleton classes?

@@ -1,0 +1,26 @@
+1.
+	Hardware interfaces, caches, loggers, config files
+
+2.
+	you can have a public static member variable or a private member variable with a static public getter (C& static only())
+
+3.
+	NO! That's the point!
+
+4.
+	&Singleton::_only;
+
+5.
+	 * Singleton classes allow us to implement interfaces without inheriting from them (perk of this over having a static class)
+	 *     Static classes also have all their members as static, while singletons do not
+	 *     Singletons can be lazily loaded
+	 *     Singles go on the heap but static objects go on the stack
+	 *     We can clone singletons, not static classes
+	 *     Singletons can use polymorphism, static classes can't
+
+6.
+	C++ - no, must be initialized outside of the class
+	Java - yes (public static final B only = new B();)
+
+7.
+	They're private
