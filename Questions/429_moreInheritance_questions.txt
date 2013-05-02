@@ -88,3 +88,12 @@ Answer the following questions for class B, in the 3 cases where it's private/pu
 
 13.
 	Does line 48 compile?
+
+14.
+  In virtual inheritance, if two parents share a common ancestor, how do they make sure to use a single instance of the ancestor?
+
+15.
+  How would one inherit a class virtually?
+
+16.
+  Who's responsibility is it to call the ancestor's constructor?

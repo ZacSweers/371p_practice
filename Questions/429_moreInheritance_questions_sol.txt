@@ -62,3 +62,12 @@
 	private: No - h() is privately/protectedly inherited, so there's no way it can be accessed from another class other than B (also A* context)
 	public: No - h() is protected and only visible from a B context, but here it's being read as an A* context and also outside of a B context
 	protected: No - h() is protected and only visible from a B context, but here it's being read as an A* context and also outside of a B context
+
+14.
+	In the derived object, each parent holds a pointer to a single instance of the common ancestor
+
+15.
+	class B : virtual A {...};
+
+16.
+	The derived child class must be the one to call the common ancestor's constructor
