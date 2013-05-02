@@ -31,7 +31,7 @@ class B : public A {
             A* const p = this;
             assert(p->f() == "B::g");
             assert(p->g() == "B::g");
-         // assert(p->h() == "A::h"); // doesn't compile
+         // assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B, but this is an A* context
             }};
 
 class C : public B {
@@ -39,11 +39,11 @@ class C : public B {
         void m () {
             assert(f() == "B::g");
             assert(g() == "B::g");
-            assert(h() == "A::h");
+            assert(h() == "A::h");  // This does compile though because C inherits B's protected methods
             A* const p = this;
             assert(p->f() == "B::g");
             assert(p->g() == "B::g");
-//          assert(p->h() == "A::h"); // doesn't compile
+//          assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B, but this is an A* context
             }};
 
 int main () {
@@ -54,11 +54,11 @@ int main () {
     B x;
     assert(x.f() == "B::g");
     assert(x.g() == "B::g");
-//  assert(x.h() == "A::h");  // doesn't compile
+//  assert(x.h() == "A::h");  // doesn't compile because h() is a protected method only visible by B, but this is an A* context and outside of a B
     A* p = &x;
     assert(p->f() == "B::g");
     assert(p->g() == "B::g");
-//  assert(p->h() == "A::h"); // doesn't compile
+//  assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B, but this is an A* context
 
     cout << "Done." << endl;
     return 0;}

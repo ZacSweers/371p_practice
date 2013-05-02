@@ -32,7 +32,7 @@ class B : protected A {
             A* const p = this;
             assert(p->f() == "B::g");
             assert(p->g() == "B::g");
-//          assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B
+//          assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B, but this is an A* context
             }};
 
 class C : public B {
@@ -46,7 +46,7 @@ class C : public B {
             A* const p = this;
             assert(p->f() == "B::g");
             assert(p->g() == "B::g");
-//          assert(p->h() == "A::h"); // doesn't compile
+//          assert(p->h() == "A::h"); // doesn't compile because h() is a protected method only visible by B, but this is an A* context
             }};
 
 int main () {
