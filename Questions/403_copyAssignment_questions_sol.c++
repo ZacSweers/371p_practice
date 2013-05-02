@@ -18,6 +18,6 @@
  *
  * 5. Does not take in by reference, does return by reference.
  * 		Takes in by value because we want to take in a deep copy that will die once the method ends.
- * 		Return by reference because we don't want to return a copy and want to be able to modify the new object
- * 
+ * 		Return by reference because we don't want to return a copy and DO want to return something we can modify.
+ *      *additional note on returning by reference: doesn't create a copy (copy contructor) on its way out, so it's quicker.
  */
