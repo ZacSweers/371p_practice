@@ -1,5 +1,5 @@
 /**
- * 1. Filles the my_vector _a array with copies of v
+ * 1. Fills the my_vector _a array with copies of v
  *
  * 2. Blocks the compiler from implicitly calling this constructor
  * 		I didn't really think this example was a good example, here's another from stackoverflow:
