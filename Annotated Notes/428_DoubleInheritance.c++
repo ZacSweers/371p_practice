@@ -88,10 +88,11 @@ int main () {
     assert(db + sizeof(B)      == z);   /* After we go past B, we're now at C's _z variable */
 
     /* ASCII Diagram of a C object */
+    /* Note that the size is 8+8+8+8+8 = 40 bytes (C.A.D._d + C.A._x + C.B.D._d + C.B._y + C._z) */
 
     /**
      * --------------------------------------------------------
-     * | C.A.D._d |  C.A._y  | C.B.D._d |  C.A._y  |   C._z   |
+     * | C.A.D._d |  C.A._x  | C.B.D._d |  C.B._y  |   C._z   |
      * --------------------------------------------------------
      * |<----D--->|          |<----D--->|          |          |
      * |          |          |          |          |          |
