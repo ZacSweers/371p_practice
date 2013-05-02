@@ -34,8 +34,8 @@ class B : private A {
             assert(p->f() == "B::g");   /* This works because we're still in B */
             assert(p->g() == "B::g");   /* Works because we're still in B  */
 //          assert(p->h() == "A::h"); // doesn't compile because I guess A can't see its own methods if it's accessing them through B and B has it private?
-            }};
-
+            }};                       // doesn't compile because we're using private inheritance, and f is protected in A.
+                                      // To make it compile, would need p to be an B* const. (i.e. would need "B* const p = this;" on line 33)
 /* child of B, doesn't know about A */
 class C : public B {
     public:
