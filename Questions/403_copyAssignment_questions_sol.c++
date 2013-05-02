@@ -17,7 +17,7 @@
  * 4. Swaps the contents of the _a array in the temporary my_vector input into our current _a array
  *
  * 5. Does not take in by reference, does return by reference.
- * 		Takes in by reference (edit: value?) because we want to take in a deep copy that will die once the method ends.
- * 		Return by reference because we don't want to return a copy
+ * 		Takes in by value because we want to take in a deep copy that will die once the method ends.
+ * 		Return by reference because we don't want to return a copy and want to be able to modify the new object
  * 
  */
