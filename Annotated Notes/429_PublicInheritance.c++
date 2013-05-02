@@ -2,6 +2,8 @@
 // PublicInheritance.c++
 // ---------------------
 
+/* See private and protected inheritance for more notes, only chance here is in main */
+
 #include <cassert>  // assert
 #include <iostream> // cout, endl
 #include <string>   // string
@@ -29,7 +31,7 @@ class B : public A {
             A* const p = this;
             assert(p->f() == "B::g");
             assert(p->g() == "B::g");
-//          assert(p->h() == "A::h"); // doesn't compile
+         // assert(p->h() == "A::h"); // doesn't compile
             }};
 
 class C : public B {
@@ -48,6 +50,7 @@ int main () {
     using namespace std;
     cout << "PublicInheritance.c++" << endl;
 
+    /* these (except A::h) work now because B is publically derived from A, aka everyone can know about it */
     B x;
     assert(x.f() == "B::g");
     assert(x.g() == "B::g");
