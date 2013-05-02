@@ -13,3 +13,7 @@
 7. Does where is the object pointer in Handle3 now?
 
 8. Why is Handle3's design useful?
+
+9. What does the boost::shared_ptr.hpp library offer? What are the two particular functions of its API that we used?
+
+10. Write a line of code that creates a shared_ptr object of type Circle with dimensions and radii of 2,3,4

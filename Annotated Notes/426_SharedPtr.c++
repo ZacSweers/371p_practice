@@ -8,7 +8,7 @@
 
 #include "boost/shared_ptr.hpp" // shared_ptr
 
-#include "Shapes.h"
+#include "412_Shapes.h"
 
 typedef boost::shared_ptr<      AbstractShape>       Shape;
 typedef boost::shared_ptr<const AbstractShape> Const_Shape;

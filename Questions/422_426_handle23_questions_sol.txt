@@ -33,3 +33,10 @@
 	It doesn't change the API of Handle1 that we used before, but makes it more useful. Illustrates good OOP design
 	where a package/class can be changed without requiring the programmer to change how the dependent classes/packages 
 	are implemented. AKA the API stays the same.
+
+9. 
+	It implements a shared pointer to use for reference counting via storing an object into an internal container and keeping track of it.
+	we use unique() and use_count() to check uniqueness and the RC of the object stored
+
+10.
+	boost::shared_ptr<AbstractShape> x(new Circle(2, 3, 4));
