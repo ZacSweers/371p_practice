@@ -1,0 +1,90 @@
+Example code:
+class A {
+    public:
+        std::string f () {
+            return g();}
+
+        virtual std::string g () = 0;
+
+    protected:
+        std::string h () {
+            return "A::h";}};
+
+class B : <PUBLIC/PRIVATE/PROTECTED> A {
+    public:
+        std::string g () {
+            return "B::g";}
+
+        void m () {
+	        assert(f() == "B::g");
+	        assert(g() == "B::g");
+	        assert(h() == "A::h");
+	        A* const p = this;
+	        assert(p->f() == "B::g");
+	        assert(p->g() == "B::g");
+	        assert(p->h() == "A::h");
+	        }};
+
+class C : public B {
+    public:
+        void m () {
+          assert(f() == "B::g");
+          assert(g() == "B::g");
+          assert(h() == "A::h");
+          A* const p = this;
+          assert(p->f() == "B::g");
+          assert(p->g() == "B::g");
+          assert(p->h() == "A::h");
+            }};
+
+int main () {
+  B x;
+  assert(x.f() == "B::g");
+  assert(x.g() == "B::g");
+  assert(x.h() == "A::h");
+  A* p = &x;                
+  assert(p->f() == "B::g");
+  assert(p->g() == "B::g");
+  assert(p->h() == "A::h");
+  return 0;}
+------------------------------------
+Answer the following questions for class B, in the 3 cases where it's private/public/protected, and explain why or why not.
+
+1.
+	Does class C know about A?
+
+2.
+	Do lines 19 and 20 compile?
+
+3.
+	Does line 21 compile?
+
+4.
+	Do lines 23 and 24 compile?
+
+5.
+	Does line 25 compile?
+
+6.
+	Do lines 31 and 32 compile?
+
+7.
+	Does line 33 compile?
+
+8.
+	Do lines 35 and 36 compile?
+
+9.
+	Does line 37 compile?
+
+10.
+	Do lines 42 and 43 compile?
+
+11.
+	Does line 44 compile?
+
+12.
+	Do lines 46 and 47 compile?
+
+13.
+	Does line 48 compile?

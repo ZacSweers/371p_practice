@@ -1,0 +1,64 @@
+1.
+	private: No - private means not even B's descendents can know its parent
+	public: Yes - because it's public
+	protected: Yes - because C is a descendent of B. B's children can see its parent
+
+2.
+	private: Yes - B can see still see its parent of course
+	public: Yes - B can see still see its parent of course
+	protected: Yes - B can see still see its parent of course
+
+3.
+	private: Yes - B can see still see its parent of course
+	public: Yes - B can see still see its parent of course
+	protected: Yes - B can see still see its parent of course
+
+4.
+	private: Yes - Because g() is defined in B, and f() is public in A so it's accessible via B within B?
+	public: Yes - B can see still see its parent of course
+	protected: Yes - B can see still see its parent of course
+
+5.
+	private: No - (I believe) an A pointer can't see its own protected methods since it's trying to access them through an A* context
+	public: No - h() is protected and only visible from a B context, but here it's being read as an A* context
+	protected: No - h() is protected and only visible from a B context, but here it's being read as an A* context
+
+6.
+	private: 31 No, 32 Yes - f() is not accessible because it's privately inherited in B. g() is accessible because it's defined in B
+	public: Yes because they're inherited from A through being inherited from B
+	protected: Yes because they're inherited from A through being inherited from B
+
+7.
+	private: No - h() is privately/protectedly inherited, so there's no way it can be accessed from another class other than B, not even B's children
+	public: Yes because while it's not a B context directly, C is derived from B, so C is a "type of" B and inherits its protected methods
+	protected: Yes because they're inherited from A through being inherited from B
+
+8.
+	private: No - f() and g() privately inherited, so there's no way they can be accessed from another class other than B (being accessed from an A* context)
+	public: Yes because they're publically inherited from B : A
+	protected: Yes because they're inherited from A through being inherited from B
+
+9.
+	private: No - h() is privately/protectedly inherited, so there's no way it can be accessed from another class other than B, not even B's children (also A* context)
+	public: No - h() is protected and only visible from a B context, but here it's being read as an A* context
+	protected: No - h() is protected and only visible from a B context, but here it's being read as an A* context
+
+10.
+	private: 42 No, 43 Yes - f() is not accessible because it's privately inherited in B. g() is accessible because it's publically defined in B
+	public: Yes because they're publically inherited from A
+	protected: No - neither are accessible because they're protectedly inherited in B, so only B's children can access them
+
+11.
+	private: No - h() is privately/protectedly inherited, so there's no way it can be accessed from another class other than B (also A* context)
+	public: No - h() is protected and only visible from a B context, but here it's outside of a B context
+	protected: No - h() is protected and only visible from a B context, but here it's outside of a B context
+
+12.
+	private: No - f() and g() privately inherited, so there's no way they can be accessed from another class other than B
+	public: Yes because they're publically inherited from A
+	protected: No - neither are accessible because they're protectedly inherited in B, so only B's children can access them
+
+13.
+	private: No - h() is privately/protectedly inherited, so there's no way it can be accessed from another class other than B (also A* context)
+	public: No - h() is protected and only visible from a B context, but here it's being read as an A* context and also outside of a B context
+	protected: No - h() is protected and only visible from a B context, but here it's being read as an A* context and also outside of a B context
