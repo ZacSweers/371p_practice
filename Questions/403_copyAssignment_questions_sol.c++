@@ -1,5 +1,5 @@
 /**
- * 1. Filles the my_vector _a array with copies of v
+ * 1. Fills the my_vector _a array with copies of v
  *
  * 2. Blocks the compiler from implicitly calling this constructor
  * 		I didn't really think this example was a good example, here's another from stackoverflow:
@@ -17,7 +17,7 @@
  * 4. Swaps the contents of the _a array in the temporary my_vector input into our current _a array
  *
  * 5. Does not take in by reference, does return by reference.
- * 		Takes in by reference because we want to take in a deep copy that will die once the method ends.
- * 		Return by reference because we don't want to return a copy
- * 
+ * 		Takes in by value because we want to take in a deep copy that will die once the method ends.
+ * 		Return by reference because we don't want to return a copy and DO want to return something we can modify.
+ *      *additional note on returning by reference: doesn't create a copy (copy contructor) on its way out, so it's quicker.
  */

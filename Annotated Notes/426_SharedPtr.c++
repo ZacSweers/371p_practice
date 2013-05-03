@@ -38,7 +38,7 @@ int main () {
     x->move(5, 6);                                              /* calling Shape's move which calls Circle's */
     assert(x->area() == (3.14 * 4 * 4));                        /* you can access area() which is member of Shape */
 //  assert(x->radius() == 4);                                   /* Shape does not know what a radius is */
-    if (const Circle* const q = dynamic_cast<Circle*>(x.get()));/* Break the rules, get access to underlying circle */
+    if (const Circle* const q = dynamic_cast<Circle*>(x.get())) /* Break the rules, get access to underlying circle */
         assert(q->radius() == 4);                               /* Calling circle's radius() directly */
     try {
         const Circle& r = dynamic_cast<Circle&>(*x.get());      /* Casting the actual object instead of Shape's pointer*/

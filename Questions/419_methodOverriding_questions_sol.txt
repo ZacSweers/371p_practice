@@ -1,4 +1,4 @@
-1. Forces the use of the derived class's method even if the parent one could be better suited
+1. forces compiler to check whether you've actually overridden the method or not
 
 2. C++
 	"using <className>::<methodName>;"
