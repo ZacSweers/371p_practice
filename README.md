@@ -1,6 +1,8 @@
 371p_practice
 =============
 
+UPDATE 5/23: I'll leave this repo up for future classes, and anyone that wants to add notes are still welcome to email me or submit pull requests. I hope this continues to help students in the future!
+
 A group for getting extra practice and review for Downing's 371p OOP class
 
 This revolves around 3 main concepts:
