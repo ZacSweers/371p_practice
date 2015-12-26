@@ -1,6 +1,8 @@
 371p_practice
 =============
 
+[![Join the chat at https://gitter.im/hzsweers/371p_practice](https://badges.gitter.im/hzsweers/371p_practice.svg)](https://gitter.im/hzsweers/371p_practice?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 UPDATE 5/23: I'll leave this repo up for future classes, and anyone that wants to add notes are still welcome to email me or submit pull requests. I hope this continues to help students in the future!
 
 A group for getting extra practice and review for Downing's 371p OOP class
